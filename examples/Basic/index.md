@@ -11,21 +11,6 @@ This is a basic example, it will show you how to get started with the LcdMenu li
 Go to [.../examples/Basic/Basic.ino](https://github.com/forntoh/LcdMenu/tree/master/examples/Basic/Basic.ino)
 
 ```cpp
-#include <Keypad.h>
-#include <LcdMenu.h>
-
-#define LCD_ROWS 2
-#define LCD_COLS 16
-
-// Configure keypad keys
-char keys[4][4] = {{'1', '2', '3', 'A'},
-                   {'4', '5', '6', 'B'},
-                   {'7', '8', '9', 'C'},
-                   {'*', '0', '#', 'D'}};
-// Configure keypad pins
-byte colPins[4] = {5, 4, 3, 2};
-byte rowPins[4] = {9, 8, 7, 6};
-
 // Define the main menu
 extern MenuItem mainMenu[];
 
