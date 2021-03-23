@@ -14,9 +14,10 @@ Display navigable menu items on your LCD display with Arduino
 
 ## Installation
 
-Follow this guide to install the library https://www.arduino.cc/en/guide/libraries
+Follow this guide to install the library [https://www.arduino.cc/en/guide/libraries](https://www.arduino.cc/en/guide/libraries)
 
 ## Examples
+
 - [Basic-Navigation](Example-01-Basic-Navigation)
 - [Sub Menus](Example-02-Sub-Menu)
 - [Callbacks](Example-03-Callback)
