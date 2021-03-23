@@ -1,37 +1,27 @@
+# Example 04 Dynamic Menu
+
 This example will show you how to dynamically create sub menu's during runtime using the LcdMenu library.
 
 ![Dynamic](https://i.imgur.com/7eqko4N.gif)
 
-### Requirements
+## Requirements
+
 - 4x4 Keypad
 - LcdDisplay
 
-### Usage
+## Usage
+
 Building a menu from a list of text
 
 ```cpp
-// List
-char* names[] = {"TP-LINK_AP_F558", "iH2K-7539", "KTA-CONNECT", "SM-G955U241"};
-
-// Create the items
-MenuItem myItems[4];
-
-// Loop through list and add each item to the menu
-for (uint8_t i = 0; i < 4; i++) {
-    // Create MenuItem to be added
-    MenuItem wifiParamsMenu[] = {MenuItem(names[i]),
-                                 ItemInput("Pass", "", NULL)};
-    // Insert MenuItem into array
-    myItems[i] = ItemSubMenu(names[i], menu.buildSubMenu(wifiParamsMenu, 2));
-}
-
-/** Set the submenu, (precise the position on the display and the items to use).
- *  Use the buildSubMenu function to generate a submenu following LcdMenu's style
- */
-menu.setSubMenu(1, menu.buildSubMenu(myItems, 4));
+// DynamicMenu.ino#L53-L54
 ```
 
-### Function reference
+```cpp
+// DynamicMenu.ino#L86-L105
+```
+
+## Function reference
 
 ```cpp
 /**
@@ -55,10 +45,10 @@ void setSubMenu(uint8_t position, MenuItem* items);
 MenuItem* buildSubMenu(MenuItem* items, uint8_t size);
 ```
 
-### Complete Code
+## Complete Code
 
 Go to [.../examples/DynamicMenu/DynamicMenu.ino](https://github.com/forntoh/LcdMenu/tree/master/examples/DynamicMenu/DynamicMenu.ino)
 
-### Circuit
+## Circuit
 
-![Circuit](https://github.com/forntoh/LcdMenu/blob/master/examples/circuit.png)
+![Circuit](../circuit.png)
