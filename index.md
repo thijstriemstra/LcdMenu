@@ -1,6 +1,13 @@
-# Home
+---
+layout: default
+title: Home
+nav_order: 1
+---
+
+# LcdMenu
 
 Display navigable menu items on your LCD display with Arduino
+{: .fs-6 .fw-300 }
 
 ![Basic](https://i.imgur.com/nViET8b.gif)
 
