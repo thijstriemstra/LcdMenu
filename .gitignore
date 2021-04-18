@@ -3,3 +3,5 @@
 src/main.cpp
 debug.log
 .github/
+.jekyll-cache/
+_site
