@@ -21,7 +21,7 @@ This is a basic example, it will show you how to get started with the LcdMenu li
 Go to [.../examples/Basic/Basic.ino](https://github.com/forntoh/LcdMenu/tree/master/examples/Basic/Basic.ino)
 
 ```cpp
-// ../../examples/Basic/Basic.ino#L43-85
+// ../../examples/Basic/Basic.ino#L43-L85
 ```
 
 ## Circuit
