@@ -23,7 +23,7 @@ Callbacks can be used with menu items of type `ItemCommand` or `ItemToggle`
 Go to [.../examples/Callbacks/Callbacks.ino](https://github.com/forntoh/LcdMenu/tree/master/examples/Callbacks/Callbacks.ino)
 
 ```cpp
-// Callbacks.ino#L50-L99
+// ../../examples/Callbacks/Callbacks.ino#L50-L99
 ```
 
 ## Circuit

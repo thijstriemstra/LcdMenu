@@ -21,7 +21,7 @@ This example will show you how to get started with submenus
 Go to [.../examples/SubMenu/SubMenu.ino](https://github.com/forntoh/LcdMenu/tree/master/examples/SubMenu/SubMenu.ino)
 
 ```cpp
-//SubMenu.ino#L44-L88
+// ../../examples/SubMenu/SubMenu.ino#L44-L88
 ```
 
 ## Circuit

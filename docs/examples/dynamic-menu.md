@@ -21,11 +21,11 @@ This example will show you how to dynamically create sub menu's during runtime u
 Building a menu from a list of text
 
 ```cpp
-// DynamicMenu.ino#L53-L54
+// ../../examples/DynamicMenu/DynamicMenu.ino#L53-L54
 ```
 
 ```cpp
-// DynamicMenu.ino#L86-L105
+// ../../examples/DynamicMenu/DynamicMenu.ino#L86-L105
 ```
 
 ## Function reference
