@@ -1,3 +1,10 @@
+---
+layout: default
+title: Notifications
+parent: Examples
+nav_order: 5
+---
+
 # Example 05 Menu Notifications
 
 This example demonstrates how to display Notifications using the LcdMenu library.

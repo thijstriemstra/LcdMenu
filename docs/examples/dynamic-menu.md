@@ -1,3 +1,10 @@
+---
+layout: default
+title: Dynamic menu
+parent: Examples
+nav_order: 4
+---
+
 # Example 04 Dynamic Menu
 
 This example will show you how to dynamically create sub menu's during runtime using the LcdMenu library.
@@ -51,4 +58,4 @@ Go to [.../examples/DynamicMenu/DynamicMenu.ino](https://github.com/forntoh/LcdM
 
 ## Circuit
 
-![Circuit](../circuit.png)
+![Circuit](/assets/img/circuit.png)

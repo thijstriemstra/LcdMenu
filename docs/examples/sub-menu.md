@@ -1,3 +1,10 @@
+---
+layout: default
+title: Sub-menus
+parent: Examples
+nav_order: 2
+---
+
 # Example 02 Sub Menu
 
 This example will show you how to get started with submenus
@@ -19,4 +26,4 @@ Go to [.../examples/SubMenu/SubMenu.ino](https://github.com/forntoh/LcdMenu/tree
 
 ## Circuit
 
-![Circuit](../circuit.png)
+![Circuit](/assets/img/circuit.png)
