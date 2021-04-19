@@ -1,5 +1,9 @@
 remote_theme: pmarsceill/just-the-docs
 
+exclude:
+  - 'examples'
+  - 'README.md'
+
 url: "https://forntoh.github.io" # the base hostname & protocol for your site
 baseurl: "/LcdMenu"
 
