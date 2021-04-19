@@ -28,4 +28,4 @@ Go to [.../examples/Callbacks/Callbacks.ino](https://github.com/forntoh/LcdMenu/
 
 ## Circuit
 
-![Circuit](/assets/img/circuit.png)
+<img src="{{ site.baseurl }}/assets/img/circuit.png" alt="Circuit">

@@ -26,4 +26,4 @@ Go to [.../examples/SubMenu/SubMenu.ino](https://github.com/forntoh/LcdMenu/tree
 
 ## Circuit
 
-![Circuit](/assets/img/circuit.png)
+<img src="{{ site.baseurl }}/assets/img/circuit.png" alt="Circuit">
