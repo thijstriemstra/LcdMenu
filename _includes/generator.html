@@ -1,0 +1,46 @@
+<pre
+  id="editor"
+  class="highlighter-rouge code"
+  contenteditable
+  spellcheck="false"
+></pre>
+
+<div class="highlighter-rouge error" style="display: none">
+  <pre><code id="error" class="no-wrap" style="background-color: transparent;">Error</code></pre>
+</div>
+
+<h3 id="output"> <a href="#output" class="anchor-heading" aria-labelledby="output"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Output </h3>
+
+<div class="code-example" style="overflow: hidden">
+  <div class="highlighter-rouge">
+    <div class="highlight">
+      <pre id="myCode" class="no-wrap">
+<code><span class="c1">// Define formatted string</span></code>
+
+<code><span class="kd">char</span> <span class="nx">input</span><span class="kc">[]</span> <span class="o">=</span> </code><span class="s">"<code id="result"></code>"</span><span class="p">;</span>
+
+<code><span class="c1">// Use the string to generate a menu</span></code>
+
+<code><span class="kd">MenuItem</span><span class="nx">*</span> <span class="nx">mMenu</span> <span class="o">=</span> <span class="gu">generateMenu</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span></code>
+</pre>
+    </div>
+  </div>
+
+  <div class="tooltip">
+    <div style="display: flex; overflow-wrap: anywhere">
+      <div class="tooltiptext" id="myTooltip">Copy to clipboard</div>
+      <button
+        onclick="copyCodeToClipboard()"
+        onmouseout="outFunc()"
+        onmouseover="overFunc()"
+        type="button"
+        name="button"
+        class="btn btn-outline"
+        style="float: right"
+        id="copyBtn"
+      >
+        COPY TO CLIPBOARD
+      </button>
+    </div>
+  </div>
+</div>
