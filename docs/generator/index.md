@@ -6,7 +6,9 @@ nav_order: 3
 
 # Menu Generator ⚙
 
-Use this tool to generate menus for this library, you don't need to format it by yourself, just enter your desired *"white-spaced"* heirarchy (example below).
+Use this tool to generate menus for this library, you don't need to format it by yourself,
+just enter your desired *"white-spaced"* heirarchy like in the example below.
+Then copy the generated code to your favorite arduino editor.
 
 ```ruby
 Settings          # Level 0 - Sub menu (contains children and has no prefix)
