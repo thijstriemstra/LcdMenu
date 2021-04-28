@@ -102,6 +102,11 @@
 
         read = `0${arr.length}00\n` + read + "\n";
 
+        read = read
+          .split("\n")
+          .sort((a, b) => parseInt(a.charAt(2)) - parseInt(b.charAt(2)))
+          .join("\n");
+
         read = read.replace(/\n/g, "\\n");
 
         final = `${read}`;
