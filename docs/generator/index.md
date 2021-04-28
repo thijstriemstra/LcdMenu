@@ -30,5 +30,11 @@ Wifi              # Level 0 - Sub menu
 {% include generator.html %}
 {% include generator-js1.html %}
 
-See how to use the generated code [here]({{ site.baseurl }}/examples/dynamicmenu)
+See how to use the generated code [here]({{ site.baseurl }}/examples/generatemenu)
 {: .fs-6 .fw-500 }
+
+---
+
+⚠ This tool has not been extensively tested, if you find a bug, please file a
+<a href="https://github.com/forntoh/LcdMenu/issues/new" style="color: white">new issue</a>
+{: .bg-red-200 .text-grey-lt-000 .p-2 .text-center }
