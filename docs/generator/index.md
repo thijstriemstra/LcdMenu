@@ -20,6 +20,11 @@ Wifi              # Level 0 - Sub menu
   C:Connect       # Level 2 - Command Item
 ```
 
+#### Rules
+
+- Do not use `C`, `T`, `I` as the first character for a sub menu item.
+- A prefixed `[C|T|I]:...` line can't contain sub lines. 
+
 *NB: Remove the comments after pasting the above example in the input field below*
 {: .fs-2 .text-yellow-300 }
 
