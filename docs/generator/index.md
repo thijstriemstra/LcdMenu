@@ -29,3 +29,6 @@ Wifi              # Level 0 - Sub menu
 {% include generator-css.html %}
 {% include generator.html %}
 {% include generator-js1.html %}
+
+See how to use the generated code [here]({{ site.baseurl }}/examples/dynamicmenu)
+{: .fs-6 .fw-500 }
