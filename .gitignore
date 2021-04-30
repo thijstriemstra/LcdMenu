@@ -2,6 +2,5 @@
 .vscode/
 src/main.cpp
 debug.log
-.github/
+_site/
 .jekyll-cache/
-_site
