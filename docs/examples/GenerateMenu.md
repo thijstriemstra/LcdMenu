@@ -24,7 +24,18 @@ Use the [Menu Formatter](https://forntoh.github.io/LcdMenu/docs/generator/) I cr
 Building a menu from text
 
 ```cpp
-// ../../examples/GenerateMenu/GenerateMenu.ino#L49-L59
+// ../../examples/GenerateMenu/GenerateMenu.ino#L49-L58
+
+// Define formatted string
+char input[] =
+    "0200\n0203Settings\n1203WiFi\n0017Backlight\n1015Contrast\n0015User\n1"
+    "213Android\n0025Password\n1024Connect\n";
+
+// Use the string to generate a menu
+mainMenu = generateMenu(input);
+
+// Add meenu to LCD
+menu.setupLcdWithMenu(0x27, mainMenu);
 ```
 
 ## Complete Code
