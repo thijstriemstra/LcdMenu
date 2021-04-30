@@ -20,7 +20,7 @@ Wifi              # Level 0 - Sub menu
   C:Connect       # Level 2 - Command Item
 ```
 
-*[more examples...](https://github.com/forntoh/LcdMenu/blob/menus-from-string/sample.txt)*
+*[more examples...](https://raw.githubusercontent.com/forntoh/LcdMenu/master/sample.txt)*
 {: .text-right }
 
 #### Rules
