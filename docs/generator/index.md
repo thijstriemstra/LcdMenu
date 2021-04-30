@@ -40,7 +40,7 @@ Wifi              # Level 0 - Sub menu
 {% include generator.html %}
 {% include generator-js1.html %}
 
-See how to use the generated code [here]({{ site.baseurl }}/examples/generatemenu)
+See how to use the generated code [here]({{ site.baseurl }}/examples/GenerateMenu.html)
 {: .fs-6 .fw-500 }
 
 ---
