@@ -7,7 +7,7 @@ nav_order: 3
 # Menu Generator ⚙
 
 Use this tool to generate menus for this library, you don't need to format it by yourself,
-just enter your desired *"white-spaced"* heirarchy like in the example below.
+just enter your desired _"white-spaced"_ heirarchy like in the example below.
 Then copy the generated code to your favorite arduino editor.
 
 ```ruby
@@ -20,25 +20,28 @@ Wifi              # Level 0 - Sub menu
   C:Connect       # Level 2 - Command Item
 ```
 
-*[more examples...](https://raw.githubusercontent.com/forntoh/LcdMenu/master/sample.txt)*
+_[more examples...](https://raw.githubusercontent.com/forntoh/LcdMenu/master/sample.txt)_
 {: .text-right }
 
 #### Rules
 
 - Do not use `C`, `T`, `I` as the first character for a sub menu item.
 - A prefixed `[C|T|I]:...` line can't contain sub lines.
-- Use very short names *(microcontrollers have limited RAM)*
+- Use very short names _(microcontrollers have limited RAM)_
 - Try to limit the heirarchy level to a maximum of **two.**
 
-*NB: Remove the comments after pasting the above example in the input field below*
+_NB: Remove the comments after pasting the above example in the input field below_
 {: .fs-2 .text-yellow-300 }
 
 ### Input
 
-{% include generator-js.html %}
-{% include generator-css.html %}
+<script>{% include generator.js %}</script>
+
+<style>{% include generator.css %}</style>
+
 {% include generator.html %}
-{% include generator-js1.html %}
+
+<script>{% include generator-clipboard.js %}</script>
 
 See how to use the generated code [here]({{ site.baseurl }}/docs/examples/GenerateMenu.html)
 {: .fs-6 .fw-500 }

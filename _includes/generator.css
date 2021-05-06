@@ -1,0 +1,66 @@
+#editor {
+  border-radius: 4px;
+  border: 1px solid #e6e7eb;
+  min-height: 10em;
+  transition: 0.3s;
+  padding: 0.75rem;
+  margin-top: 1em;
+  line-height: 1.5em;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+  outline: none;
+  background-color: #f5f6fa;
+  box-shadow: inset 0 0 5px 2px #e6e7eb;
+  -webkit-overflow-scrolling: touch;
+}
+
+#editor:focus {
+  border: 1px solid #7253ed;
+  box-shadow: inset 0 0 5px 2px #7253ed25;
+}
+
+.code {
+  font-family: "SFMono-Regular", Menlo, Consolas, Monospace;
+  font-size: 0.75em;
+  line-height: 1.4;
+  color: #555;
+}
+
+.highlighter-rouge.error {
+  border: 1px solid #cb4b16;
+  color: #cb4b16;
+  background-color: #cb4c160c;
+}
+
+.no-wrap {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.tooltip .tooltiptext {
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  z-index: 1;
+  flex: 3;
+  flex-shrink: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  right: 0;
+  margin-right: 20px;
+  max-height: 3em;
+  overflow: auto;
+}
+
+.tooltip .btn {
+  flex: 1;
+}
+
+.highlighter-rouge.error pre {
+  margin: 0 !important;
+}
