@@ -76,6 +76,8 @@ window.onload = function () {
             const element = arr[j];
             const toFind = k + 1 + "" + element.split("\n")[0];
 
+            if (read.match(new RegExp(`\\d\\d${toFind}`, "gm"))) continue;
+
             re = new RegExp(`\.*${toFind}`, "gm");
             if (parseInt(toFind.charAt(1)) != SUB_MENU)
               read = read.replace(re, j + " $&");
@@ -125,7 +127,7 @@ window.onload = function () {
             n = up.charAt(2);
 
             if (n != pn) {
-              value = value.substr(0, 2) + up.charAt(0) + value.substr(2);
+              value = `${value.substr(0, 2)}${up.charAt(0)}${value.substr(2)}`;
               pn = n;
             }
 
@@ -139,24 +141,31 @@ window.onload = function () {
           let sub = 1;
 
           while (true) {
-            while (readArr[index - i].charAt(2) != value.charAt(2) - "0" - sub)
-              i++;
+            try {
+              while (
+                readArr[index - i].charAt(2) !=
+                value.charAt(2) - "0" - sub
+              )
+                i++;
 
-            let up = readArr[index - i];
+              let up = readArr[index - i];
 
-            value = value.substr(0, 2) + up.charAt(0) + value.substr(2);
+              value = `${value.substr(0, 2)}${up.charAt(0)}${value.substr(2)}`;
 
-            if (up.charAt(2) != 0) {
-              sub++;
-              i++;
-            } else break;
+              if (up.charAt(2) != 0) {
+                sub++;
+                i++;
+              } else break;
+            } catch (error) {
+              break;
+            }
           }
         }
         read.push(value);
       });
 
       /* Sort the items */
-      read = read
+      read
         .sort(function (a, b) {
           let countA = 0;
           let countB = 0;
@@ -169,7 +178,25 @@ window.onload = function () {
             parseInt(a.charAt(countA - 1)) - parseInt(b.charAt(countB - 1))
           );
         })
-        .join("\n");
+        .forEach((a, index) => {
+          let count = 0;
+          while (a.charAt(count) < 10 && count < a.length) count++;
+
+          if (count >= 5) {
+            if (a.charAt(count - 1) == SUB_MENU) {
+              start = 2;
+              end = count - 4;
+            } else {
+              start = 1;
+              end = count - 3;
+            }
+            read[index] =
+              a.substr(0, start) +
+              `<span class="o">${a.substr(start, end)}</span>` +
+              a.substr(start + end);
+          }
+        });
+      read = read.join("\n");
 
       /* Replace new line with literal */
       read = read.replace(/\n/g, "\\n");
