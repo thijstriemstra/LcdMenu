@@ -355,7 +355,7 @@ class LcdMenu {
         this->currentMenuTable = menu;
         // call later on
         //paint();
-        update();
+        //update();
     }
     /**
      * Call this function to set sub menu items for any main menu item
@@ -460,7 +460,7 @@ class LcdMenu {
                 // display the menu again
                 //
                 //paint();
-                update();
+                //update();
                 break;
             }
             case MENU_ITEM_TOGGLE: {
