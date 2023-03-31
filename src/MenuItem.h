@@ -44,6 +44,8 @@ const byte MENU_ITEM_NONE = 6;
 const byte MENU_ITEM_TOGGLE = 7;
 const byte MENU_ITEM_END_OF_MENU = 8;
 const byte MENU_ITEM_LIST = 9;
+const byte MENU_ITEM_STRING_LIST = 10;
+const byte MENU_ITEM_INT_LIST = 11;
 /**
  * The MenuItem class
  */
@@ -58,6 +60,9 @@ class MenuItem {
     MenuItem* subMenu = NULL;
     byte type = MENU_ITEM_NONE;
     String* items = NULL;
+    std::vector<String> str_items;
+    std::vector<int> int_items;
+    int index;
 
    public:
     /**
@@ -106,6 +111,18 @@ class MenuItem {
           type(type),
           items(items),
           itemCount(itemCount) {}
+    MenuItem(char* text, std::vector<String> items, int index, fptr callback, byte type)
+        : text(text),
+          str_items(items),
+          index(index),
+          callback(callback),
+          type(type) {}
+    MenuItem(char* text, std::vector<int> items, int index, fptr callback, byte type)
+        : text(text),
+          int_items(items),
+          index(index),
+          callback(callback),
+          type(type) {}
     /**
      * ## Getters
      */
@@ -119,19 +136,17 @@ class MenuItem {
      * Get the items list.
      * @return `vector<String>` - Items
      */
-    std::vector<String> getItems() { return items; }
+    std::vector<String> getStringItems() { return str_items; }
     /**
      * Get the int items list.
      * @return `vector<int>` - Items
      */
     std::vector<int> getIntItems() { return int_items; }
-
     /**
      * Get selected index
      * @return `int` - Item's text
      */
     int getSelectedIndex() { return index; }
-
     /**
      * Get the callback of the item
      * @return `ftpr` - Item's callback

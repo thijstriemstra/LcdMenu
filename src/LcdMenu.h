@@ -181,20 +181,6 @@ class LcdMenu {
                     lcd->print(item->isOn ? item->getTextOn()
                                           : item->getTextOff());
                     break;
-                case MENU_ITEM_STRING_LIST:
-                    //
-                    // display selected string item
-                    //
-                    lcd->print(" ");
-                    lcd->print(item->getItems().at(item->getSelectedIndex()));
-                    break;
-                case MENU_ITEM_INT_LIST:
-                    //
-                    // display selected integer item
-                    //
-                    lcd->print(" ");
-                    lcd->print(item->getIntItems().at(item->getSelectedIndex()));
-                    break;
                 case MENU_ITEM_INPUT:
                     //
                     // append the value of the input
@@ -210,6 +196,20 @@ class LcdMenu {
                     lcd->print(":");
                     lcd->print(item->getItems()[item->itemIndex].substring(
                         0, maxCols - strlen(item->getText()) - 2));
+                    break;
+                case MENU_ITEM_STRING_LIST:
+                    //
+                    // display selected string item
+                    //
+                    lcd->print(" ");
+                    lcd->print(item->getStringItems().at(item->getSelectedIndex()));
+                    break;
+                case MENU_ITEM_INT_LIST:
+                    //
+                    // display selected integer item
+                    //
+                    lcd->print(" ");
+                    lcd->print(item->getIntItems().at(item->getSelectedIndex()));
                     break;
                 default:
                     break;
@@ -268,27 +268,6 @@ class LcdMenu {
     void paint() {
         drawMenu();
         drawCursor();
-    }
-
-    /**
-     * Reset the display
-     * @param isHistoryAvailable indicates if there is a previous position
-     */
-    void reset(boolean isHistoryAvailable) {
-        if (isHistoryAvailable) {
-            cursorPosition = previousCursorPosition;
-            top = previousTop;
-            bottom = previousBottom;
-        } else {
-            previousCursorPosition = cursorPosition;
-            previousTop = top;
-            previousBottom = bottom;
-
-            cursorPosition = 1;
-            top = 1;
-            bottom = maxRows;
-        }
-        update();
     }
     /**
      * Calculate and set the new blinker position
