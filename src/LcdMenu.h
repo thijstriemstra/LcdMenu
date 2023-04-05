@@ -48,6 +48,11 @@ class LcdMenu {
      */
 
     /**
+     * Cursor position
+     */
+    uint8_t cursorPosition = 1;
+    uint8_t previousCursorPosition = 1;
+    /**
      * First visible item's position in the menu array
      */
     uint8_t top = 1;
@@ -290,12 +295,6 @@ class LcdMenu {
     /**
      * ## Public Fields
      */
-
-    /**
-     * Cursor position
-     */
-    uint8_t cursorPosition = 1;
-    uint8_t previousCursorPosition = 1;
 
     /**
      * Time when the timer started in milliseconds
