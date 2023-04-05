@@ -826,22 +826,6 @@ class LcdMenu {
      * Check if currently displayed menu is a sub menu.
      */
     bool isSubMenu() {
-        //
-        // get the type of the
-        //
-        byte menuItemType = currentMenuTable[0].getType();
-        //
-        // check if this is a sub menu
-        //
-        if (menuItemType == MENU_ITEM_SUB_MENU_HEADER) {
-            return true;
-        }
-        return false;
-    }
-    /**
-     * Check if currently displayed menu is a sub menu.
-     */
-    bool isSubMenu() {
         byte menuItemType = currentMenuTable[0].getType();
         return menuItemType == MENU_ITEM_SUB_MENU_HEADER;
     }
