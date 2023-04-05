@@ -3,7 +3,7 @@
 
   MIT License
 
-  Copyright (c) 2020-2021 Forntoh Thomas
+  Copyright (c) 2020-2023 Forntoh Thomas
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -552,7 +552,7 @@ class LcdMenu {
             return;
         }
         //
-        //  check if this is a sub menu, if so go back to its parent
+        // check if this is a sub menu, if so go back to its parent
         //
         if (isSubMenu()) {
             currentMenuTable = currentMenuTable[0].getSubMenu();
@@ -753,7 +753,7 @@ class LcdMenu {
      * @brief Execute a callback after [delay] milliseconds
      *
      * @param callback The callback to be executed
-     * @param delay Deley time in milliseconds
+     * @param delay Delay time in milliseconds
      */
     void run(fptr callback, uint8_t delay) {
         this->delay = delay;
@@ -837,6 +837,13 @@ class LcdMenu {
             return true;
         }
         return false;
+    }
+    /**
+     * Check if currently displayed menu is a sub menu.
+     */
+    bool isSubMenu() {
+        byte menuItemType = currentMenuTable[0].getType();
+        return menuItemType == MENU_ITEM_SUB_MENU_HEADER;
     }
     /**
      * Get a `MenuItem` at position
