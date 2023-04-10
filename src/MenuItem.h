@@ -55,15 +55,15 @@ class MenuItem {
     const char* text = NULL;
     const char* textOn = NULL;
     const char* textOff = NULL;
-    std::vector<String> items;
-    std::vector<int> int_items;
-    int index;
     fptr callback = NULL;
     fptrInt callbackInt = NULL;
     fptrStr callbackStr = NULL;
     MenuItem* subMenu = NULL;
     byte type = MENU_ITEM_NONE;
     String* items = NULL;
+    std::vector<String> str_items;
+    std::vector<int> int_items;
+    int index;
 
    public:
     /**
@@ -105,9 +105,16 @@ class MenuItem {
           textOff(textOff),
           callbackInt(callback),
           type(type) {}
+    MenuItem(const char* text, String* items, uint8_t itemCount,
+             fptrInt callback, byte type)
+        : text(text),
+          callbackInt(callback),
+          type(type),
+          items(items),
+          itemCount(itemCount) {}
     MenuItem(char* text, std::vector<String> items, int index, fptr callback, byte type)
         : text(text),
-          items(items),
+          str_items(items),
           index(index),
           callback(callback),
           type(type) {}
@@ -117,13 +124,6 @@ class MenuItem {
           index(index),
           callback(callback),
           type(type) {}
-    MenuItem(const char* text, String* items, uint8_t itemCount,
-             fptrInt callback, byte type)
-        : text(text),
-          callbackInt(callback),
-          type(type),
-          items(items),
-          itemCount(itemCount) {}
     /**
      * ## Getters
      */
@@ -137,19 +137,17 @@ class MenuItem {
      * Get the items list.
      * @return `vector<String>` - Items
      */
-    std::vector<String> getItems() { return items; }
+    std::vector<String> getStringItems() { return str_items; }
     /**
      * Get the int items list.
      * @return `vector<int>` - Items
      */
     std::vector<int> getIntItems() { return int_items; }
-
     /**
      * Get selected index
      * @return `int` - Item's text
      */
     int getSelectedIndex() { return index; }
-
     /**
      * Get the callback of the item
      * @return `ftpr` - Item's callback

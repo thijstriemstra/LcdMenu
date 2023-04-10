@@ -48,6 +48,11 @@ class LcdMenu {
      */
 
     /**
+     * Cursor position
+     */
+    uint8_t cursorPosition = 1;
+    uint8_t previousCursorPosition = 1;
+    /**
      * First visible item's position in the menu array
      */
     uint8_t top = 1;
@@ -181,20 +186,6 @@ class LcdMenu {
                     lcd->print(item->isOn ? item->getTextOn()
                                           : item->getTextOff());
                     break;
-                case MENU_ITEM_STRING_LIST:
-                    //
-                    // display selected string item
-                    //
-                    lcd->print(" ");
-                    lcd->print(item->getItems().at(item->getSelectedIndex()));
-                    break;
-                case MENU_ITEM_INT_LIST:
-                    //
-                    // display selected integer item
-                    //
-                    lcd->print(" ");
-                    lcd->print(item->getIntItems().at(item->getSelectedIndex()));
-                    break;
                 case MENU_ITEM_INPUT:
                     //
                     // append the value of the input
@@ -210,6 +201,20 @@ class LcdMenu {
                     lcd->print(":");
                     lcd->print(item->getItems()[item->itemIndex].substring(
                         0, maxCols - strlen(item->getText()) - 2));
+                    break;
+                case MENU_ITEM_STRING_LIST:
+                    //
+                    // display selected string item
+                    //
+                    lcd->print(" ");
+                    lcd->print(item->getStringItems().at(item->getSelectedIndex()));
+                    break;
+                case MENU_ITEM_INT_LIST:
+                    //
+                    // display selected integer item
+                    //
+                    lcd->print(" ");
+                    lcd->print(item->getIntItems().at(item->getSelectedIndex()));
                     break;
                 default:
                     break;
@@ -268,26 +273,6 @@ class LcdMenu {
     void paint() {
         drawMenu();
         drawCursor();
-    }
-    /**
-     * Reset the display
-     * @param isHistoryAvailable indicates if there is a previous position
-     */
-    void reset(boolean isHistoryAvailable) {
-        if (isHistoryAvailable) {
-            cursorPosition = previousCursorPosition;
-            top = previousTop;
-            bottom = previousBottom;
-        } else {
-            previousCursorPosition = cursorPosition;
-            previousTop = top;
-            previousBottom = bottom;
-
-            cursorPosition = 1;
-            top = 1;
-            bottom = maxRows;
-        }
-        update();
     }
     /**
      * Calculate and set the new blinker position
@@ -818,13 +803,6 @@ class LcdMenu {
     void updateTimer() {
         if (millis() == startTime + delay) update();
     }
-    /**
-     * Check if currently displayed menu is a sub menu.
-     */
-    bool isSubMenu() {
-        byte menuItemType = currentMenuTable[0].getType();
-        return menuItemType == MENU_ITEM_SUB_MENU_HEADER;
-    }
 
     void redraw() {
         paint();
@@ -853,17 +831,8 @@ class LcdMenu {
      * Check if currently displayed menu is a sub menu.
      */
     bool isSubMenu() {
-        //
-        // get the type of the
-        //
         byte menuItemType = currentMenuTable[0].getType();
-        //
-        // check if this is a sub menu
-        //
-        if (menuItemType == MENU_ITEM_SUB_MENU_HEADER) {
-            return true;
-        }
-        return false;
+        return menuItemType == MENU_ITEM_SUB_MENU_HEADER;
     }
     /**
      * Get a `MenuItem` at position
